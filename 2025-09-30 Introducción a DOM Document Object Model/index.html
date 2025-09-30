@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>DOM Document Object Model</h1>
+
+        <h2>Lenguajes de progración</h2>
+        <ul id="eUlLenguajes">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>PHP</li>
+        </ul>
+        
+
+        <script>
+            'use strict';
+
+            const nUl = document.getElementById('eUlLenguajes');
+            console.log(nUl);
+
+            const nLi = document.createElement('li');
+            nUl.appendChild(nLi);
+
+            const nText = document.createTextNode('C++');
+            nLi.appendChild(nText);
+
+            nUl.setAttribute('style', 'list-style-type: square; color: blue;');
+            nUl.setAttribute('title', 'Lenguajes usados este curso.')
+        </script>
+    </body>
+</html>

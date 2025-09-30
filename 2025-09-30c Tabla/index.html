@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tablas</h1>
+
+    <h2>Tabla con HTML</h2>
+
+    <table border="1">
+        <tr>
+            <th>País</th>
+            <th>Código</th>
+        </tr>
+        <tr>
+            <td>España</td>
+            <td>ES</td>
+        </tr>
+        <tr>
+            <td>Francia</td>
+            <td>FR</td>
+        </tr>
+    </table>
+
+    <h2>La misma tabla con JavaScript</h2>
+    <table border="1" id="eTabPaises"></table>
+
+    <script>
+        'use strict';
+
+        const nTabla = document.getElementById('eTabPaises');
+
+        let nTr = document.createElement('tr');
+        nTabla.appendChild(nTr);
+
+        let nTh = document.createElement('th') ;
+        nTr.appendChild(nTh);
+
+        let nTexto = document.createTextNode('País');
+        nTh.appendChild(nTexto);
+
+    </script>
+</body>
+</html>
