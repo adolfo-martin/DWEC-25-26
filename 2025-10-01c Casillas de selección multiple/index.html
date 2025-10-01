@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades de Murcia</title>
+</head>
+<body>
+    <h1>Ciudades de la comunidad de Murcia</h1>
+
+    <!-- <input type="checkbox" name="Lorca" id="eChkLorca" value="30800">
+    <label for="eChkLorca">Lorca</label> -->
+
+    <form action="">
+        <div id="eDivCiudades"></div>
+
+        <button type="submit">Enviar</button>
+    </form>
+    
+
+    <script src="./ciudades-murcia.js"></script>
+
+    <script>
+        'use strict';
+
+        const nDiv = document.getElementById('eDivCiudades');
+        
+        for (const { nombre, codigoPostal } of ciudades) {
+            const nCheckbox = document.createElement('input');
+            nDiv.appendChild(nCheckbox);
+            nCheckbox.setAttribute('type', 'checkbox');
+            nCheckbox.setAttribute('name', nombre);
+            nCheckbox.setAttribute('id', `eChk${nombre}`);
+            // nCheckbox.setAttribute('value', codigoPostal);
+    
+            const nLabel = document.createElement('label');
+            nDiv.appendChild(nLabel);
+            nLabel.setAttribute('for', `eChk${nombre}`);
+            
+            nDiv.appendChild(document.createElement('br'));
+
+            const nText = document.createTextNode(nombre);
+            nLabel.appendChild(nText);
+        }
+
+    </script>
+</body>
+</html>

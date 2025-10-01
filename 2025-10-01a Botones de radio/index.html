@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Botones de selección individual</h1>
+
+    <!-- <h2>Género:</h2>
+    <div>
+        <input type="radio" name="genero" id="eRadMasculino" value="masculino">
+        <label for="eRadMasculino">Masculino</label>
+
+        <input type="radio" name="genero" id="eRadFemenino" value="femenino">
+        <label for="eRadFemenino">Femenino</label>
+
+        <input type="radio" name="genero" id="eRadNoResponde" value="noresponde" checked>
+        <label for="eRadNoResponde">No responde</label>
+    </div> -->
+
+    <!-- getElementById, createElement, appendChild, createTextNode, setAttribute -->
+    <h2>Género</h2>
+    <div id="eDivGeneros"></div>
+    
+    <script>
+        const nDiv = document.getElementById('eDivGeneros');
+
+        let nInput = document.createElement('input');
+        nDiv.appendChild(nInput);
+        nInput.setAttribute('type', 'radio');
+        nInput.setAttribute('name', 'genero');
+        nInput.setAttribute('id', 'eRadMasculino');
+        nInput.setAttribute('value', 'masculino');
+        
+        let nLabel = document.createElement('label');
+        nDiv.appendChild(nLabel);
+        nLabel.setAttribute('for', 'eRadMasculino');
+
+        let nText = document.createTextNode('Masculino');
+        nLabel.appendChild(nText);
+
+
+        nInput = document.createElement('input');
+        nDiv.appendChild(nInput);
+        nInput.setAttribute('type', 'radio');
+        nInput.setAttribute('name', 'genero');
+        nInput.setAttribute('id', 'eRadFemenino');
+        nInput.setAttribute('value', 'femenino');
+        
+        nLabel = document.createElement('label');
+        nDiv.appendChild(nLabel);
+        nLabel.setAttribute('for', 'eRadFemenino');
+
+        nText = document.createTextNode('Femenino');
+        nLabel.appendChild(nText);
+
+        nInput = document.createElement('input');
+        nDiv.appendChild(nInput);
+        nInput.setAttribute('type', 'radio');
+        nInput.setAttribute('name', 'genero');
+        nInput.setAttribute('id', 'eRadNoResponde');
+        nInput.setAttribute('checked', '');
+        nInput.setAttribute('value', 'noresponde');
+        
+        nLabel = document.createElement('label');
+        nDiv.appendChild(nLabel);
+        nLabel.setAttribute('for', 'eRadNoResponde');
+
+        nText = document.createTextNode('No responde');
+        nLabel.appendChild(nText);
+
+
+
+
+
+    </script>
+</body>
+</html>

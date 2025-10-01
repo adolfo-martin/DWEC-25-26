@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista desplegable</h1>
+    
+    <!-- <select name="" id="">
+        <option value="lu">Lunes</option>
+        <option value="ma">Martes</option>
+        ...
+    </select> -->
+
+    <label>Elige un día: </label>
+    <select id="eSelDias">
+        <option selected disabled>Seleccione un día</option>
+    </select>
+
+    <script src="./datos.js"></script>
+
+    <script>
+        'use strict';
+        
+        const nSelect = document.getElementById('eSelDias');
+        
+        for (const dia of diasSemana) {
+            const nOption = document.createElement('option');
+            nSelect.appendChild(nOption);
+            nOption.setAttribute('value', dia.substring(0,2));
+    
+            const nText = document.createTextNode(dia);
+            nOption.appendChild(nText);
+        }
+
+    </script>
+
+</body>
+</html>
