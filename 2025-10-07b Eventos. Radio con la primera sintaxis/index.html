@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https.//www.estapaginanoexiste.es">
+        <h1>Aficiones</h1>
+        <h3>Selecciona tu afición favorita</h3>
+
+        <div id="eDivAficiones"></div>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+
+    <script>
+        'use strict';
+
+        const aficiones = [
+            {clave: 'cc', valor: 'Conducir coches'},
+            {clave: 'em', valor: 'Escuchar música'},
+            {clave: 'sm', valor: 'Salir con mujeres'},
+            {clave: 'll', valor: 'Leer libros'},
+            {clave: 'sa', valor: 'Salir con amigos'},
+            {clave: 'jf', valor: 'Jugar al fútbol'},
+            {clave: 'ai', valor: 'Aprender idiomas'},
+        ];
+
+        const nDiv = document.getElementById('eDivAficiones');
+
+        
+        for (const aficion of aficiones) {
+            const nRad = document.createElement('input');
+            nDiv.appendChild(nRad);
+            nRad.setAttribute('type', 'radio');
+            nRad.setAttribute('name', 'aficion');
+            nRad.setAttribute('value', aficion.clave);
+            nRad.setAttribute('id', `eRad${aficion.clave}`);
+
+            // Primera sintaxis
+            //nRad.setAttribute('onchange', `mostrarMensaje("${aficion.valor}")`);
+
+            nRad.addEventListener('change', mostrarMensaje2);
+    
+            const nLabel = document.createElement('label');
+            nDiv.appendChild(nLabel);
+            nLabel.setAttribute('for', `eRad${aficion.clave}`);
+    
+            const nText = document.createTextNode(aficion.valor);
+            nLabel.appendChild(nText);
+        }
+
+        function mostrarMensaje(aficion) {
+            console.log('Has seleccionado una nueva afición: ' + aficion);
+        }
+
+        function mostrarMensaje2(e) {
+            // console.log(e);
+            const nRadio = e.target; // Etiqueta que generó el evento
+            const codigo = nRadio.value;
+            console.log(codigo);
+        }
+    </script>
+</body>
+</html>

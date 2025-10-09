@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    <table border="1">
+        <tr>
+            <td id="eTdRojo" data-color="rojo" style="background-color: red">rojo</td>
+            <td id="eTdVerde" data-color="verde" style="background-color: green">verde</td>
+            <td id="eTdAzul" data-color="azul" style="background-color: blue">azul</td>
+        </tr>
+        <tr>
+            <td id="eTdAmarillo" data-color="amarillo" style="background-color: yellow">amarillo</td>
+            <td id="eTdPurpura" data-color="purpura" style="background-color: magenta">purpura</td>
+            <td id="eTdCeleste" data-color="celeste" style="background-color: cyan">celeste</td>
+        </tr>
+    </table>
+
+    <script>
+        'use strict';
+
+        // Primer argumento: un string
+        // Segundo argumento: una función (callback)
+        document.getElementById('eTdRojo').addEventListener('click', mostrarColor);
+        document.getElementById('eTdVerde').addEventListener('click', mostrarColor);
+        document.getElementById('eTdAzul').addEventListener('click', mostrarColor);
+        document.getElementById('eTdAmarillo').addEventListener('click', mostrarColor);
+        document.getElementById('eTdPurpura').addEventListener('click', mostrarColor);
+        document.getElementById('eTdCeleste').addEventListener('click', mostrarColor);
+
+        function mostrarColor(e) {
+            const etiqueta = e.target;
+            // const color = etiqueta.getAttribute('data-color');
+            const color = etiqueta.dataset.color;
+
+            console.log(`Has cliqueado el color ${color}`);
+        }
+    </script>
+</body>
+</html>

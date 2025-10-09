@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    <table border="1">
+        <tr>
+            <td onclick="mostrarColor('rojo')" style="background-color: red">rojo</td>
+            <td onclick="mostrarColor('verde')" style="background-color: green">verde</td>
+            <td onclick="mostrarColor('azul')" style="background-color: blue">azul</td>
+        </tr>
+        <tr>
+            <td onclick="mostrarColor('amarillo')" style="background-color: yellow">amarillo</td>
+            <td onclick="mostrarColor('purpura')" style="background-color: magenta">purpura</td>
+            <td onclick="mostrarColor('celeste')" style="background-color: cyan">celeste</td>
+        </tr>
+    </table>
+
+    <script>
+        'use strict';
+
+        function mostrarColor(color) {
+            console.log(`Has cliqueado el color ${color}`);
+        }
+    </script>
+</body>
+</html>

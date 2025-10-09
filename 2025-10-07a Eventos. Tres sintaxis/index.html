@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Primera sintaxis. Ponemos el evento en la misma etiqueta -->
+    <p onclick="alert('Has cliqueado en el párrafo 1.')" >Este es el párrafo 1</p>
+
+    <p style="border: solid; display: inline;" onmouseover="mostrarMensajeDos(); detallarMensajeDos()">Este es el párrafo 2</p>
+
+    <p onmouseout="console.warn('Saliendo del párrafo 3')" onmouseover="console.error('Entrando en el párrafo 3')">Este el el párrafo 3</p>
+
+    <!-- Segunda sintaxis. Poniendo el evento en JS -->
+    <p id="eParParrafo5">Este es el párrafo 5</p>
+
+    <!-- Tercera sintaxis. Como en Java -->
+    <p id="eParParrafo6">Este es el párrafo 6</p>
+
+
+    <script>
+        'use strict';
+
+        function mostrarMensajeDos() {
+            console.log('Has entrado en el párrafo 2');
+        }
+
+        function detallarMensajeDos() {
+            console.log('De verdad de verdad que has pasado sobre el párrafo 2');
+        }
+
+        function mostrarMensajeCinco() {
+            console.log("Has cliqueado en el párrafo 5");
+            return undefined;
+        }
+
+        function mostrarMensajeSeis() {
+            console.log("Has cliqueado en el párrafo 6");
+            return undefined;
+        }
+
+        // Segunda forma. Usando la propiedad asociada al evento.
+        const nParrafo5 = document.getElementById('eParParrafo5');
+        // nParrafo5.setAttribute('onclick', 'mostrarMensajeCinco()');
+        nParrafo5.onclick = mostrarMensajeCinco;
+
+        // Tercera sintaxis. La que es parecida a Java
+        const nParrafo6 = document.getElementById('eParParrafo6');
+        nParrafo6.addEventListener( 'click', mostrarMensajeSeis);
+        nParrafo6.addEventListener('click', mostrarMensajeCinco);
+        nParrafo6.addEventListener('click', () => console.log('Soy seis'));
+
+
+    </script>
+</body>
+</html>
