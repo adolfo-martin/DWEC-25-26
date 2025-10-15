@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="module">
+
+        getAndShowQuoteOfTheDay();
+
+
+        function getAndShowQuoteOfTheDay() {
+            const url = 'https://favqs.com/api/qotd';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const author = data.quote.author;
+                    const quote = data.quote.body;
+
+                    document.getElementById('tParQuote').textContent = quote;
+                    document.getElementById('tParAuthor').textContent = author;
+                });
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Quote of the day</h1>
+    </header>
+
+    <main>
+        <p id="tParQuote"></p>
+        <p id="tParAuthor"></p>
+    </main>
+    
+</body>
+</html>

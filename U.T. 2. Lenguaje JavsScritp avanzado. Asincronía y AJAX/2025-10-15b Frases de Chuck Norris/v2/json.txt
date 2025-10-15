@@ -1,0 +1,44 @@
+[
+    [
+        [
+            "la mesa es verde",
+            "the table is green",
+            null,
+            null,
+            3,
+            null,
+            null,
+            [
+                []
+            ],
+            [
+                [
+                    [
+                        "e050167b38f2a566522b4157651fc616",
+                        "en_es_2023q1.md"
+                    ],
+                    null,
+                    null,
+                    null,
+                    null,
+                    [
+                        [
+                            [
+                                9,
+                                8,
+                                0
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ],
+    null,
+    "en",
+    null,
+    null,
+    null,
+    null,
+    []
+]
