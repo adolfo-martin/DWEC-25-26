@@ -1,0 +1,10 @@
+GET https://namey.muffinlabs.com/name.json
+
+###
+
+GET https://namey.muffinlabs.com/name.json?count=8
+
+###
+
+# type: male, female, both
+GET https://namey.muffinlabs.com/name.json?count=8&type=both

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./code.js"></script>
+</head>
+<body>
+    <h1>Servicio de nombres</h1>
+
+    <label>Cuántos nombres quieres: </label>
+    <input type="range" id="tRngQuantity" min="1" max="10" value="1">
+
+    <label>Género: </label>
+    <br>
+    <input type="radio" name="gender" id="tRadMale" value="male">
+    <label for="">Masculino</label>
+    <input type="radio" name="gender" id="tRadFemale" value="female">
+    <label for="">Femenino</label>
+    <input type="radio" name="gender" id="tRadBoth" value="both" checked>
+    <label for="">Ambos</label>
+
+    <br>
+    <br>
+    <button type="button" id="tButRequestNames">Solicitar nombres</button>
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody id="tTbdNames"></tbody>
+    </table>
+</body>
+</html>
