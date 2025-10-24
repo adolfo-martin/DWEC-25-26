@@ -1,0 +1,14 @@
+### Todos los productos
+GET https://dummyjson.com/products
+
+### El producto de código 1
+
+GET https://dummyjson.com/products/7
+
+### Todas las categorías
+
+GET https://dummyjson.com/products/categories
+
+### Todos los productos de una categoría
+
+GET https://dummyjson.com/products/category/smartphones

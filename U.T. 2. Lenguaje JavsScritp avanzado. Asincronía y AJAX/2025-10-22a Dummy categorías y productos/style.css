@@ -1,0 +1,50 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: #fffacd;
+}
+
+body>header {
+    background-color: black;
+    color: #fffacd;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    padding-top: 50px;
+}
+
+.container-cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+}
+
+.card {
+    border: solid;
+    background-color: white;
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    header {
+        font-weight: bold;
+    }
+}
+
+dialog {
+    margin: auto;
+}
