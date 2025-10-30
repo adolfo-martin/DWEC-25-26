@@ -1,4 +1,4 @@
-const products = [1, 3, 5, 7, 11, 13];
+const products = [1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 33, 37];
 
 
 const url = 'https://dummyjson.com/products/';
@@ -47,11 +47,11 @@ const nTbody = document.querySelector('#tTbdProducts');
 // });
 
 
-const promises = products.map(productId => async() => {
+const promises = products.map(productId => (async(productId) => {
     const response = await fetch(url + productId + '?delay=2000');
     const product = await response.json();
     return product;
-});
+})(productId));
 
 const productsDetails = await Promise.all(promises);
 
