@@ -1,0 +1,5 @@
+GET https://restcountries.com/v3.1/all?fields=name,cioc
+
+###
+
+GET 'https://restcountries.com/v3.1/alpha/ESP
