@@ -1,0 +1,8 @@
+GET https://dummyjson.com/products/categories?delay=1000
+
+###
+
+GET https://dummyjson.com/products/category/smartphones?delay=1000
+
+###
+GET https://dummyjson.com/products/7?delay=1000

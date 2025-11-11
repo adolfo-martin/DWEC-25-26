@@ -1,0 +1,31 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+.container-products {
+    display: inline-grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 25px;
+}
+
+.card-product {
+    width: 150px;
+    height: 250px;
+    border: solid;
+
+    img {
+        width: 100%;
+        aspect-ratio: 1;
+    }
+}

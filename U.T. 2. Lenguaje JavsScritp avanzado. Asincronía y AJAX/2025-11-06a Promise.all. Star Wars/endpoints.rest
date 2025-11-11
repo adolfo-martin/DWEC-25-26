@@ -1,0 +1,4 @@
+GET https://swapi.dev/api/people/1
+
+###
+GET https://swapi.dev/api/films/1

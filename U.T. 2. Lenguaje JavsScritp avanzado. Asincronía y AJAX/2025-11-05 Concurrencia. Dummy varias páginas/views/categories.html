@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>Arcas Market</header>
+
+    <nav>
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./categories.html">Categorías</a></li>
+            <li><a href="./products.html">Productos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Categorías</h1>
+
+
+        <!-- <a href="./products.html?category=smartphones">Smartphones</a>
+        <a href="./products.html?category=laptops">Laptops</a> -->
+
+
+        <div class="container-categories">
+
+            <div class="card-category" data-category="smartphones">
+                <header>Smartphones</header>
+            </div>
+
+            <div class="card-category" data-category="laptops">
+                <header>Laptops</header>
+            </div>
+
+            <script type="module">
+                // document.querySelector('[data-category=smartphones]')
+                //     .addEventListener('click', e => {
+                //         const categoryId = e.currentTarget.dataset.category;
+                //         // Cuando almacenamos algo en window.location se provoca un reenvío a esa página
+                //         window.location = './products.html?category=' + categoryId;
+                //     });
+
+                const cards = document.querySelectorAll('.card-category');
+                cards.forEach(card => {
+                    card.addEventListener('click', e => {
+                        const categoryId = e.currentTarget.dataset.category;
+                        // Cuando almacenamos algo en window.location se provoca un reenvío a esa página
+                        window.location = './products.html?category=' + categoryId;
+                    });
+                });
+            </script>
+
+        </div>
+    </main>
+</body>
+</html>

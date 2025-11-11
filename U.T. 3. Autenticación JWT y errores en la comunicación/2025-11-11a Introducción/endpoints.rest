@@ -1,0 +1,15 @@
+### Obtención del token
+POST https://dummyjson.com/auth/login
+content-type: application/x-www-form-urlencoded
+
+username=emilys
+&password=emilyspass
+
+
+### Todos los productos sin autorización
+GET https://dummyjson.com/products
+
+
+### Todos los productos con autorización
+GET https://dummyjson.com/auth/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NjI4NTU4ODEsImV4cCI6MTc2Mjg1OTQ4MX0.eFjAGJzMeiWWCuQzXQM9xPdUnepvGbZLZMgz50zBW5s
