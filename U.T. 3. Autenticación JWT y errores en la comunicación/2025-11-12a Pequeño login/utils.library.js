@@ -15,7 +15,7 @@ export async function authenticateUserAndGetToken(username, password) {
                 password,
                 expiresInMins: 30,
             }),
-            credentials: 'include'
+            // credentials: 'include'
         });
     } catch (e) {
         throw new Error(`[authenticateUserAndGetToken] Cannot authenticate user: ${e.message}`);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #tAncLogin {
+            background-color: red;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+    </style>
+
+    <script type="module">
+        import { decodeToken } from './utils.library.js';
+
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+
+        if (token) {
+            const decodedToken = decodeToken(token);
+            const { firstName, lastName } = decodedToken;
+            document.querySelector('#tAncLogin').textContent = firstName[0] + lastName[0];
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <span>Prueba de login</span>
+        <a href="./login.html" id="tAncLogin">Iniciar sesión</a>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore cumque quo nisi officia delectus, qui sunt animi ad eveniet aspernatur, nesciunt incidunt? Quisquam voluptate odit facere illo, corrupti excepturi reiciendis molestias laborum eveniet natus? Magnam itaque voluptatibus, aliquam corporis quas esse facere molestiae voluptas maxime animi ab! Non quibusdam necessitatibus minus quia laborum atque cum labore enim reprehenderit sint magni eius natus blanditiis, nulla quae, repellendus doloremque laudantium recusandae, accusantium saepe debitis! Accusamus et incidunt nam voluptatibus labore ullam aut minima, in corporis ut laborum facilis commodi inventore saepe doloribus ipsum odio delectus tempora repellat. Doloremque facere architecto ratione quo?</p>
+    </main>
+</body>
+</html>

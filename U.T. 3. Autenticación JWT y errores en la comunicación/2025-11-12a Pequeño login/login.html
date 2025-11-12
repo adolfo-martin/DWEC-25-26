@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="module">
+        import { authenticateUserAndGetToken, decodeToken } from './utils.library.js';
+
+        document.querySelector('#tButValidate')
+            .addEventListener('click', validateUser);
+
+        async function validateUser(_) {
+            const username = document.querySelector('#tTxtUsername').value;
+            const password = document.querySelector('#tPasPassword').value;
+            console.log(username, password);
+            try {
+                const token = await authenticateUserAndGetToken(username, password);
+                console.log(token);
+                const decodedToken = decodeToken(token);
+                console.log(decodedToken);
+                window.location = './index.html?token=' + token;
+            } catch (e) {
+                alert(e.message);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Usuario: </label>
+            <input type="text" value="emilys" id="tTxtUsername">
+        </div>
+        <div>
+            <label>Contraseña: </label>
+            <input type="password" value="emilyspass" id="tPasPassword">
+        </div>
+
+        <button type="button" id="tButValidate">Validar usuario</button>
+    </form>
+</body>
+</html>
