@@ -26,3 +26,19 @@ body {
         position: absolute;
     }
 }
+
+.container-categories {
+    display: inline-grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+}
+
+.card-category {
+    border: solid;
+    width: 150px;
+
+    img {
+        width: 100px;
+        aspect-ratio: 1;
+    }
+}

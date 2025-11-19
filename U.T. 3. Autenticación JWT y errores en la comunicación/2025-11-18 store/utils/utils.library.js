@@ -50,7 +50,7 @@ export async function get(url, token, errorMessage) {
             headers: {
                 'Authorization': 'Bearer ' + token,
             },
-            credentials: 'include'
+            // credentials: 'include'
         });
     } catch (e) {
         throw new Error(`${errorMessage}: ${e.message}`);
