@@ -11,17 +11,33 @@
     <script type="module" src="./products.js"></script>
 </head>
 <body>
+    <header class="header-app">
+        <div>M</div>
+        <div class="title">Arcas Store</div>
+        <button class="login"></button>
+        <span id="tDivCart" class="cart-details">
+            <div>🛒</div>
+            <table border="1" class="cart-details__products hidden">
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </table>
+            <div class="cart-details__total hidden"></div>
+        </span>
+    </header>
+
     <main>
         <h1>Productos de la categoría <span id="tSpnCategory"></span></h1>
 
         <div id="tDivProducts" class="container-products">
-            <div class="card-product">
+            <!-- <div class="card-product">
                 <header>IPhone 17</header>
                 <img src="" alt="">
                 <span>Marca:</span>
                 <span>Precio:</span>
                 <button>Añadir a cesta</button>
-            </div>
+            </div> -->
         </div>
     </main>
     

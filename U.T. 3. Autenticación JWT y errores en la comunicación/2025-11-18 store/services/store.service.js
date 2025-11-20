@@ -23,12 +23,26 @@ export default class StoreService {
      * @throws {Error} An exception if cannot recover the information.
      */
     async getProductsByCategory(categoryId, token) {
-        const data = await get(`https://dummyjson.com/auth/products/category/${categoryId}?delay=1000`, token, 'getProductsByCategory');
+        const data = await get(`https://dummyjson.com/auth/products/category/${categoryId}?delay=1000&select=id,title,thumbnail`, token, 'getProductsByCategory');
         // primer ...: rest almacena en una variable el resto de propiedades no usadas
         // segundo ...: spread descompone un objeto u arreglo en sus partes
         return data.products.map(({title: name, thumbnail: image, ...others}) => ({name, image, ...others}));
     }
 
 
+    /**
+     * The function gets one product.
+     * @param {string} productId The id of the product.
+     * @param {string} token The access token.
+     * @returns {Promise<Array<{id: string, name: string, image: string, price: number}>>} The data recovered.
+     * @throws {Error} An exception if cannot recover the information.
+     */
+    async getProduct(productId, token) {
+        const data = await get(`https://dummyjson.com/auth/products/${productId}?delay=1000&select=id,title,price,thumbnail`, token, 'getProduct');
+        // primer ...: rest almacena en una variable el resto de propiedades no usadas
+        // segundo ...: spread descompone un objeto u arreglo en sus partes
+        const { title: name, thumbnail: image, ...others } = data;
+        return { name, image, ...others };
+    }
 
 }
