@@ -42,3 +42,20 @@ body {
         aspect-ratio: 1;
     }
 }
+
+.container-products {
+    display: inline-grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+}
+
+.card-product {
+    border: solid;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 100px;
+    }
+}

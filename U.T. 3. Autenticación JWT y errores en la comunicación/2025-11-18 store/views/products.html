@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script type="module" src="../components/footer-app.component.js"></script>
+    <link rel="stylesheet" href="./style.css">
 
+    <script type="module" src="../components/footer-app.component.js"></script>
     <script type="module" src="./products.js"></script>
 </head>
 <body>
+    <main>
+        <h1>Productos de la categoría <span id="tSpnCategory"></span></h1>
+
+        <div id="tDivProducts" class="container-products">
+            <div class="card-product">
+                <header>IPhone 17</header>
+                <img src="" alt="">
+                <span>Marca:</span>
+                <span>Precio:</span>
+                <button>Añadir a cesta</button>
+            </div>
+        </div>
+    </main>
     
     <footer-app></footer-app>
 </body>
