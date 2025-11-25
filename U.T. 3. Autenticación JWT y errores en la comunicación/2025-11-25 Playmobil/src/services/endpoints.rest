@@ -1,0 +1,16 @@
+### Chequeo que haga bien la validacion
+POST http://127.0.0.1:8081/api/login_user
+content-type: application/x-www-form-urlencoded
+
+username=sonia.silverado
+&password=s
+
+#-----------------------------------
+
+### Retrieve series success
+GET http://127.0.0.1:8082/api/series
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQwNjM4ODgsImV4cCI6MTc2NDA3ODI4OH0.i6xRCNCKdeXscMMlmGiVoi4bL3ogqMngCCHDASfoah4
+
+### Retrieve boxes success
+GET http://127.0.0.1:8082/api/serie/1703135e-03b3-4a32-b8df-16965d19b862/boxes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQwNjM4ODgsImV4cCI6MTc2NDA3ODI4OH0.i6xRCNCKdeXscMMlmGiVoi4bL3ogqMngCCHDASfoah4
