@@ -1,8 +1,7 @@
 export default class PlaymobilService {
 
-    async getSeries(token) {
-        const url = 'http://127.0.0.1:8082/api/series';
 
+    static async get(url, errorMessage, token) {
         // Comprueba si el servidor está encendido
         let response;
         try {
@@ -15,12 +14,12 @@ export default class PlaymobilService {
                 headers
             });
         } catch (error) {
-            throw new Error(`Cannot retrieve series: ${error}`);
+            throw new Error(`${errorMessage}: ${error}`);
         }
 
         // Comprueba si el fetch fue correcto
         if (!response.ok) {
-            throw new Error(`Cannot retrieve series: [${response.status} ${response.statusText}]`);
+            throw new Error(`${errorMessage}: [${response.status} ${response.statusText}]`);
         }
 
         // Comprueba si estoy recibiendo JSON
@@ -28,15 +27,47 @@ export default class PlaymobilService {
         try {
             data = await response.json();
         } catch (error) {
-            throw new Error(`Cannot retrieve series: ${error}`);
+            throw new Error(`${errorMessage}: ${error}`);
         }
 
         // Comprueba si el data es correcto
         if (!data.ok) {
-            throw new Error(`Cannot retrieve series: ${data.message}`);
+            throw new Error(`${errorMessage}: ${data.message}`);
         }
 
+        return data;
+    }
+
+
+    async getSeries(token) {
+        const url = 'http://127.0.0.1:8082/api/series';
+        const errorMessage = `Cannot retrieve series`;
+        const data = await PlaymobilService.get(url, errorMessage, token);
         return data.series;
     }
 
+
+    /** */
+    async getSerieByUuid(uuid, token) {
+        const url = 'http://127.0.0.1:8082/api/serie/' + uuid;
+        const errorMessage = `Cannot retrieve serie ` + uuid;
+        const data = await PlaymobilService.get(url, errorMessage, token);
+        return data.serie;
+    }
+
+
+    async getBoxesBySerie(serieUuid, token) {
+        const url = 'http://127.0.0.1:8082/api/serie/' + serieUuid + '/boxes';
+        const errorMessage = `Cannot retrieve boxes of serie ` + serieUuid;
+        const data = await PlaymobilService.get(url, errorMessage, token);
+        return data.boxes;
+    }
+
+
+    async getBoxByUuid(uuid, token) {
+        const url = 'http://127.0.0.1:8082/api/box/' + uuid;
+        const errorMessage = `Cannot retrieve box ` + uuid;
+        const data = await PlaymobilService.get(url, errorMessage, token);
+        return data.box;
+    }
 }

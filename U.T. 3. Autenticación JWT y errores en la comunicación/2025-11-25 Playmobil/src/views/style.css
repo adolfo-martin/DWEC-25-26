@@ -14,8 +14,8 @@ body {
     display: flex;
 }
 
-main {
+/* main {
     flex: 1 1 0;
     display: grid;
     place-content: center;
-}
+} */

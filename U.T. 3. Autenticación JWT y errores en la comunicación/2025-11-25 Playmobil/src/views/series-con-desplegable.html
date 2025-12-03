@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="module">
+        import PlaymobilService from '../services/playmobil.service.js';
+
+        document.querySelector('#tButGotoboxes').addEventListener('click', gotoBoxes);
+        function gotoBoxes(e) {
+            const serieId = document.querySelector('#tSelSeries').value;
+            window.location = './boxes.html?serie=' + serieId;
+        }
+
+        const series = await (new PlaymobilService()).getSeries();
+        fillSelect(series);
+
+
+        function fillSelect(series) {
+            const nSelect = document.querySelector('#tSelSeries');
+            nSelect.addEventListener('change', handlerSerieChanged);
+
+            series.forEach(serie => {
+                nSelect.innerHTML += `
+                    <option value="${serie.uuid}" data-denomination="${serie.denomination}">${serie.denomination}</option>
+                `;
+            });
+        }
+
+
+        async function handlerSerieChanged(e) {
+            const nButton = document.querySelector('#tButGotoboxes');
+            nButton.removeAttribute('disabled');
+            
+            // const serie = (await (new PlaymobilService()).getSeries()).find(serie => serie.uuid === e.target.value);
+            // nButton.innerHTML = 'Ver las cajas de la serie ' + serie.denomination;
+
+            const option = document.querySelector(`option[value="${e.target.value}"]`);
+            nButton.innerHTML = 'Ver las cajas de la serie ' + option.dataset.denomination;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Series</h1>
+
+    <div>
+        <select id="tSelSeries">
+            <option disabled selected>Elija una serie ...</option>
+        </select>
+    
+        <button type="button" id="tButGotoboxes" disabled>Seleccione una caja</button>
+    </div>
+
+    <div>
+        <header>denominacion</header>
+        <p>descripcion</p>
+        <img src="" alt="imagen">
+    </div>
+</body>
+</html>
