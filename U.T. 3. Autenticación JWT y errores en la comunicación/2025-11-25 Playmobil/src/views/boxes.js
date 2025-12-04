@@ -39,15 +39,34 @@ function fillContainerBoxes(boxes) {
 
     boxes.forEach(box => {
         nDiv.innerHTML += `
-            <input type="checkbox" id="tChk${box.uuid}" value="${box.uuid}">
+            <input type="checkbox" id="tChk${box.uuid}" value="${box.uuid}" checked>
             <label for="tChk${box.uuid}">${box.denomination}</label>
         `;
+
+        document.querySelector(`#tChk${box.uuid}`).addEventListener('change', e => {
+            document.querySelector('#tButSend').removeAttribute('disabled');
+        });
     });
 
 
     document.querySelector('#tButSend').addEventListener('click', e => {
-        const selected = document.querySelectorAll('input[type=checkbox]:checked');
-        window.location = './figures.html?boxes=' + JSON.stringify(selected);
+        const selected = Array.from(document.querySelectorAll('input[type=checkbox]:checked'));
+        const values = selected.map(checkbox => checkbox.value);
+        // window.location = './figures.html?boxes=' + values;
+
+        window.localStorage.setItem('cajas', JSON.stringify(values));
+
+        const cesta = {
+            productos: [
+                { producto: values[0], cantidad: 3 },
+                { producto: values[2], cantidad: 1 },
+                { producto: values[3], cantidad: 2 },
+            ]
+        };
+
+        window.localStorage.setItem('cesta', JSON.stringify(cesta));
+
+        const cesta2 = JSON.parse(window.localStorage.getItem('cesta'));
     })
 
 }

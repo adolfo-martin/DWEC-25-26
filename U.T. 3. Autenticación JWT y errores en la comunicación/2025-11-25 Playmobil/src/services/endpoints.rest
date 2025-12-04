@@ -1,5 +1,5 @@
 ### Chequeo que haga bien la validacion
-POST http://127.0.0.1:8081/api/login_user
+POST http://192.168.0.48:8081/api/login_user
 content-type: application/x-www-form-urlencoded
 
 username=sonia.silverado
@@ -8,26 +8,26 @@ username=sonia.silverado
 #-----------------------------------
 
 ### Retrieve series success
-GET http://127.0.0.1:8082/api/series
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ3NDY2NDQsImV4cCI6MTc2NDc2MTA0NH0.rWOFMqcH7JEispreGwSKivMUL_-AzWL2oN9TuptcVwU
+GET http://192.168.0.48:8082/api/series
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ4NDkxNTEsImV4cCI6MTc2NDg2MzU1MX0.RXEx0P1DKpYfftjXW2YrwrHYHRAi3Ac1T8Hek3Acjds
 
 ### Retrieve a serie
-GET http://127.0.0.1:8082/api/serie/1703135e-03b3-4a32-b8df-16965d19b862
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ3NDY2NDQsImV4cCI6MTc2NDc2MTA0NH0.rWOFMqcH7JEispreGwSKivMUL_-AzWL2oN9TuptcVwU
+GET http://192.168.0.48:8082/api/serie/1703135e-03b3-4a32-b8df-16965d19b862
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ4NDkxNTEsImV4cCI6MTc2NDg2MzU1MX0.RXEx0P1DKpYfftjXW2YrwrHYHRAi3Ac1T8Hek3Acjds
 
 
 ### Retrieve boxes of a serie success
-GET http://127.0.0.1:8082/api/serie/1703135e-03b3-4a32-b8df-16965d19b862/boxes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ3NDY2NDQsImV4cCI6MTc2NDc2MTA0NH0.rWOFMqcH7JEispreGwSKivMUL_-AzWL2oN9TuptcVwU
+GET http://192.168.0.48:8082/api/serie/1703135e-03b3-4a32-b8df-16965d19b862/boxes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ4NDkxNTEsImV4cCI6MTc2NDg2MzU1MX0.RXEx0P1DKpYfftjXW2YrwrHYHRAi3Ac1T8Hek3Acjds
 
 ### Retrieve one box
-GET http://127.0.0.1:8082/api/box/4f5e3a80-a7ce-47fe-a93f-87daab41d449
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ3NDY2NDQsImV4cCI6MTc2NDc2MTA0NH0.rWOFMqcH7JEispreGwSKivMUL_-AzWL2oN9TuptcVwU
+GET http://192.168.0.48:8082/api/box/4f5e3a80-a7ce-47fe-a93f-87daab41d449
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ4NDkxNTEsImV4cCI6MTc2NDg2MzU1MX0.RXEx0P1DKpYfftjXW2YrwrHYHRAi3Ac1T8Hek3Acjds
 
 ### Retrieve 
-GET http://127.0.0.1:8082/api/box/5297d100-cc4a-4893-abd9-b743efab8838/figures
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ3NDY2NDQsImV4cCI6MTc2NDc2MTA0NH0.rWOFMqcH7JEispreGwSKivMUL_-AzWL2oN9TuptcVwU
+GET http://192.168.0.48:8082/api/box/5297d100-cc4a-4893-abd9-b743efab8838/figures
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ4NDkxNTEsImV4cCI6MTc2NDg2MzU1MX0.RXEx0P1DKpYfftjXW2YrwrHYHRAi3Ac1T8Hek3Acjds
 
 ### Retrieve one box
-GET http://127.0.0.1:8082/api/figure/dff4477a-103e-4310-9b20-496b08069a9f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ3NDY2NDQsImV4cCI6MTc2NDc2MTA0NH0.rWOFMqcH7JEispreGwSKivMUL_-AzWL2oN9TuptcVwU
+GET http://192.168.0.48:8082/api/figure/dff4477a-103e-4310-9b20-496b08069a9f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbmlhLnNpbHZlcmFkbyIsImZpcnN0bmFtZSI6IlNvbmlhIiwibGFzdG5hbWUiOiJTaWx2ZXJhZG8iLCJpYXQiOjE3NjQ4NDkxNTEsImV4cCI6MTc2NDg2MzU1MX0.RXEx0P1DKpYfftjXW2YrwrHYHRAi3Ac1T8Hek3Acjds
