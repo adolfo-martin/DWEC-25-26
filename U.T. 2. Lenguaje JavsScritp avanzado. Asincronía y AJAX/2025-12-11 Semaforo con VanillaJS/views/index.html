@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="module" src="../components/semaforo.component.js"></script>
+
+    <style>
+        .coche {
+            width: 100px;
+            height: 100px;
+            border: solid 20px transparent;
+            border-top: solid 20px blue;
+            border-radius: 50%;
+            animation: moviendose 1s linear 0s infinite normal both;
+            animation-play-state: paused;
+        }
+
+        .moviendose {
+            animation-play-state: running;
+        }
+
+        @keyframes moviendose {
+            from {
+                rotate: 0turn;
+            }
+            to {
+                rotate: 1turn;
+            }
+        }
+    </style>
+
+    <script type="module">
+            // coche 1 pedro
+            const semaforo = document.querySelector('#tSemSemaforo');
+            semaforo.addEventListener('colorrojoencendido', e => {
+                document.querySelector('#tDivCoche1').classList.remove('moviendose');
+            });
+            semaforo.addEventListener('colorverdeencendido', e => {
+                document.querySelector('#tDivCoche1').classList.add('moviendose');
+            });
+            semaforo.addEventListener('colornaranjaencendido', e => {
+                document.querySelector('#tDivCoche1').style.animationDuration = "250ms";
+            });
+
+
+            // coche 2
+            semaforo.addEventListener('colorrojoencendido', e => {
+                document.querySelector('#tDivCoche2').classList.remove('moviendose');
+            });
+
+            // coche 3
+            semaforo.addEventListener('colorrojoencendido', e => {
+                document.querySelector('#tDivCoche3').classList.remove('moviendose');
+            });
+
+    </script>
+</head>
+<body>
+    <mi-semaforo id="tSemSemaforo" duracion-rojo="5000" duracion-naranja="1000" duracion-verde="5000"></mi-semaforo>
+
+    <br>
+    <br>
+    <div id="tDivCoche1" class="coche"></div>
+
+    <br>
+    <div id="tDivCoche2" class="coche"></div>
+
+    <br>
+    <div id="tDivCoche3" class="coche"></div>
+
+</body>
+</html>
