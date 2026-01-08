@@ -1,5 +1,19 @@
-<card-product 
+@if (products$ | async; as products) {
+  @for (product of products; track $index) {
+    <card-product 
+      [name]="product.title" 
+      [price-euros]="product.price" 
+      [image]="product.image"
+    ></card-product>
+  }
+} @else {
+  <div>Recuperando los productos. Espere, por favor ...</div>
+}
+
+
+
+<!-- <card-product 
   name="Lapiz para pestañas" 
   price-euros="29.90" 
   image="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
-></card-product>
+></card-product> -->

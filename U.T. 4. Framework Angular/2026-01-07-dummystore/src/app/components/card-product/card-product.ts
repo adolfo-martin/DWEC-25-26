@@ -1,4 +1,4 @@
-import { Component, input, Input, computed } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'card-product',
@@ -9,7 +9,6 @@ import { Component, input, Input, computed } from '@angular/core';
 export class CardProduct {
   // @Input('name') name: string = '';
   name = input<string>();
-  private priceInput = input<string>('0', {alias: 'price-euros'});
-  priceEuros = computed(() => parseFloat(this.priceInput()) || 0);
+  priceEuros = input<number>(0, {alias: 'price-euros'});
   image = input<string>();
 }
