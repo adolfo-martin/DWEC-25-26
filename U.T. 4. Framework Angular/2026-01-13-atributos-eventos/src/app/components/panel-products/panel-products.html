@@ -1,0 +1,7 @@
+  @if (products$ | async; as products) {
+    @for (product of products; track $index) {
+      <card-product [product-id]="product.id" [name]="product.title" [image]="product.thumbnail" [price]="product.price"></card-product>
+    }
+  } @else {
+    <span class="loading loading-dots loading-xl"></span>
+  }

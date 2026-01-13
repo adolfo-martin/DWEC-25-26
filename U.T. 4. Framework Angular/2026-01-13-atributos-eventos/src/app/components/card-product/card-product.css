@@ -1,4 +1,4 @@
-:host {
+/* :host {
     display: inline-flex;
     flex-direction: column;
     border: solid;
@@ -12,4 +12,4 @@ img {
 input[type=number] {
     border: solid;
     width: 5ch;
-}
+} */
