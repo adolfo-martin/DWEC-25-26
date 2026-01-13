@@ -1,0 +1,15 @@
+:host {
+    display: inline-flex;
+    flex-direction: column;
+    border: solid;
+    width: 100px;
+}
+
+img {
+    width: 100%;
+}
+
+input[type=number] {
+    border: solid;
+    width: 5ch;
+}
