@@ -1,0 +1,9 @@
+<h1>Categorías</h1>
+
+@if (categories$ | async; as categories) {
+    @for (category of categories; track $index) {
+        <div>{{category.name}}</div>
+    }
+} @else {
+    <div>Espere a que tenga las categorías.</div>
+}

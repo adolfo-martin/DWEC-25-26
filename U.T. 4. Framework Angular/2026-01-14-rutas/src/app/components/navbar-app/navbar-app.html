@@ -1,0 +1,34 @@
+<div class="relative">
+    <button type="button" class="btn" popovertarget="menu">Menu</button>
+    
+    <nav popover="manual" id="menu" class="absolute top-0 left-0 w-dvw h-dvh bg-blue-700/50 text-white text-xl font-bold">
+      <ul class="relative bg-blue-700 w-fit h-full flex flex-col p-4 pr-20 gap-8">
+        <li><a routerLink="/home">Inicio</a></li>
+        <li>
+          <a routerLink="/categories">Categorías</a>
+
+          @if (categories$ | async; as categories) {
+            <ul class="pl-4 font-normal">
+              @for (category of categories; track $index) {
+                <li>
+                  <a>{{category.name}}</a>
+                </li>
+              }
+            </ul>
+          } @else {
+            <div>Espere a que se cargen las categorías.</div>
+          }
+        </li>
+
+        <li><a routerLink="/products">Productos</a></li>
+
+        <button type="button" popovertarget="menu" popovertargetaction="hide" class="absolute top-4 right-4">X</button>
+      </ul>
+
+    </nav>
+
+</div>
+
+<div>Dummy Store</div>
+
+<button-login></button-login>

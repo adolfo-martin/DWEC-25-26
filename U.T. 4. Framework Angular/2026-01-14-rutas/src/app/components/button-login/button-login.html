@@ -1,0 +1,6 @@
+@if (statusService.isLogged()) {
+    <div>{{statusService.fullname()}}</div>
+    <button type="button" class="btn" (click)="statusService.closeSession()">Cerrar sesión</button>
+} @else {
+    <button type="button" class="btn" (click)="loginHandler($event)">Abrir sesión</button>
+}

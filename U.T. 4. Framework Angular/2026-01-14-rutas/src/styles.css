@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+@layer base {
+    h1 {
+        @apply text-3xl text-blue-950 text-center font-bold uppercase;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-4 py-1 bg-blue-950 text-white font-bold rounded-2xl; 
+    }
+}
