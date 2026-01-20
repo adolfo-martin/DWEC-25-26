@@ -1,0 +1,87 @@
+<h1>Productos</h1>
+
+<table class="m-auto left-0 right-0 w-1/2 [&>thead]:text-green-800 [&_img]:size-32 [&_img]:bg-green-200 [&_img]:rounded-4xl" id="tTabProducts"></table>
+
+<!-- @if (products$ | async; as products) {
+<table id="tTabProducts">
+    <tbody>
+        @for (product of products; track $index) {
+        <tr>
+            <td>
+                <img [src]="product.thumbnail" alt="" class="size-8"/>
+            </td>
+            <td>
+                {{product.title}}
+            </td>
+            <td>{{product.price}} €</td>
+        </tr>
+        }
+    </tbody>
+</table>
+} @else {
+<div>Espere a recuperar los productos</div>
+} -->
+
+
+
+
+<!-- @if (products$ | async; as products) {
+    <div class="overflow-x-auto">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <label>
+                            <input type="checkbox" class="checkbox" />
+                        </label>
+                    </th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (product of products; track $index) {
+                    <tr>
+                        <th>
+                            <label>
+                                <input type="checkbox" class="checkbox" />
+                            </label>
+                        </th>
+                        <td>
+                            <div class="flex items-center gap-3">
+                                <div class="avatar">
+                                    <div class="mask mask-squircle h-12 w-12">
+                                        <img [src]="product.thumbnail"
+                                            alt="Avatar Tailwind CSS Component" />
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            {{product.title}}
+                        </td>
+                        <td>{{product.price}} €</td>
+                        <th>
+                            <button class="btn btn-ghost btn-xs">details</button>
+                        </th>
+                    </tr>
+                }
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+} @else {
+    <div>Espere a recuperar los productos</div>
+} -->

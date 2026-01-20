@@ -1,0 +1,25 @@
+<nav>
+  <ul>
+    <li><a routerLink="/home">Inicio</a></li>
+
+    <li>
+      <ul>
+        <li><a routerLink="/categories/beauty/products">Belleza</a></li>
+        <li><a routerLink="/categories/laptops/products">Portátiles</a></li>
+        <li><a routerLink="/categories/smartphones/products">Teléfonos inteligentes</a></li>
+      </ul>
+    </li>
+
+    <li><a routerLink="/products">Products</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div>
+    <button data-category="beauty" (click)="categoryClickedHandler($event)">Belleza</button>
+    <button data-category="laptops" (click)="categoryClickedHandler($event)">Portátiles</button>
+    <button data-category="smartphones" (click)="categoryClickedHandler($event)">Teléfonos inteligentes</button>
+  </div>
+
+  <router-outlet></router-outlet>
+</main>
