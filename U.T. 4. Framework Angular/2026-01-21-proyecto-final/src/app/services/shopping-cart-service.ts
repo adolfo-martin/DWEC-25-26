@@ -18,9 +18,8 @@ export class ShoppingCartService {
 
   addProduct(product: ProductT) {
     this.shoppingCart.update(cart => {
-      console.log(product);
       cart.push(product);
-      return cart;
+      return [...cart];
     });
   }
 }
