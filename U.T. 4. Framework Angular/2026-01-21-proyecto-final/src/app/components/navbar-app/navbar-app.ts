@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ButtonShoppingcart } from "../button-shoppingcart/button-shoppingcart";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'navbar-app',
-  imports: [ButtonShoppingcart],
+  imports: [ButtonShoppingcart, RouterLink],
   templateUrl: './navbar-app.html',
   styleUrl: './navbar-app.css',
   host: {

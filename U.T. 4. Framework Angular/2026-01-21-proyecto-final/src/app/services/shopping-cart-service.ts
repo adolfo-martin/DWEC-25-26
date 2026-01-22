@@ -16,10 +16,13 @@ export class ShoppingCartService {
     return this.shoppingCart().length;
   });
 
+  public readonly totalImport = computed( () => this.shoppingCart().reduce((acc, cur) => acc += cur.price, 0) );
+
   addProduct(product: ProductT) {
     this.shoppingCart.update(cart => {
       cart.push(product);
-      return [...cart];
+      // return [...cart];
+      return Array.from(cart);
     });
   }
 }

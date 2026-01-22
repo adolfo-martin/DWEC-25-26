@@ -1,0 +1,14 @@
+<h1 class="font-bold text-2xl uppercase text-center">Categorías</h1>
+
+@if (categories$ | async; as categories) {
+    @for (category of categories; track $index) {
+        <p [attr.data-category-id]="category.id" (click)="categoryClickHandler($event)">
+            <!-- <a [routerLink]="`/categories/${category.id}/products`">{{category.name}}</a> -->
+            {{category.name}}
+        </p>
+    } @empty {
+        <div>No existen categorías.</div>
+    }
+} @else {
+    <div>Espere, por favor.</div>
+}

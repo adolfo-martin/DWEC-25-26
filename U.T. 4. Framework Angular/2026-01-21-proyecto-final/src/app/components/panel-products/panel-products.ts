@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AddProductToShoppingCartEventT, CardProduct } from '../card-product/card-product';
 import { ShoppingCartService } from '../../services/shopping-cart-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'panel-products',
@@ -10,6 +11,12 @@ import { ShoppingCartService } from '../../services/shopping-cart-service';
 })
 export class PanelProducts {
   service = inject(ShoppingCartService);
+  private readonly route = inject(ActivatedRoute);
+
+  constructor() {
+    const categoryId = this.route.snapshot.paramMap.get('categoryId');
+    console.log(categoryId)
+  }
 
   addProductToShoppingCardHandler($event: AddProductToShoppingCartEventT) {
     this.service.addProduct({
