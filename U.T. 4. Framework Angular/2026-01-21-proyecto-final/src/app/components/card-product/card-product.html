@@ -1,3 +1,4 @@
-<header>{{productName()}}</header>
-<p>{{productPrice()}} €</p>
+<header class="font-bold text-2xl text-center">{{productName()}}</header>
+<img [src]="productImage()" [alt]="productName()">
+<p class="font-bold text-center text-xl">{{productPrice()}} €</p>
 <button type="button" (click)="addProductToShoppingCartHandler($event)">🛒</button>

@@ -1,3 +1,6 @@
-<p>🛒</p>
-<p>{{service.quantity()}}</p>
-<p>{{service.totalImport()}}</p>
+<p [attr.data-quantity]="service.quantity()" class="text-4xl relative
+    after:content-[attr(data-quantity)] after:bg-red-500 after:rounded-full
+    after:text-lg after:size-5 after:grid after:place-content-center
+    after:absolute after:right-0 after:top-0
+">🛒</p>
+<p class="hidden">{{service.totalImport()}}</p>

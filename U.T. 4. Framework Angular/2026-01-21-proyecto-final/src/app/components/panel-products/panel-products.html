@@ -1,9 +1,29 @@
 <h1>Productos</h1>
 
-<card-product [product-id]="1" name="Balón de futbol" [price]="49.95"
-    (addproducttoshoppingcart)="addProductToShoppingCardHandler($event)"
-></card-product>
+<!-- <style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+</style> -->
 
-<card-product [product-id]="2" name="Silbato de árbitro" [price]="25.95"
+@if (products$ | async; as products) {
+    <section class="grid gap-4 p-4 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+        @for (product of products; track $index) {
+            <card-product [product-id]="product.id" [name]="product.name" [price]="product.price"
+                [image]="product.image"
+                (addproducttoshoppingcart)="addProductToShoppingCardHandler($event)"
+            ></card-product>
+        }
+    </section>
+}
+
+
+
+<!-- <card-product [product-id]="1" name="Balón de futbol" [price]="49.95"
     (addproducttoshoppingcart)="addProductToShoppingCardHandler($event)"
-></card-product>
+></card-product> -->
+
+<!-- <card-product [product-id]="2" name="Silbato de árbitro" [price]="25.95"
+    (addproducttoshoppingcart)="addProductToShoppingCardHandler($event)"
+></card-product> -->

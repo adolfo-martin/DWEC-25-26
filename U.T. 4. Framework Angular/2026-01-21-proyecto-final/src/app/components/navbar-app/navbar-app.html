@@ -1,9 +1,14 @@
-<div>
-    <ul>
-        <li><a routerLink="categories">Categorías</a></li>
-        <li><a routerLink="products">Productos</a></li>
-    </ul>
-</div>
-
+<section class="relative  h-1/2">
+    <input type="checkbox" id="tChkMenu" class="hidden peer">
+    <label for="tChkMenu" class="text-4xl">=</label>
+    
+    <nav class="hidden peer-checked:block absolute left-0 top-10 bg-blue-600 text-white">
+        <ul>
+            <li><a routerLink="categories">Categorías</a></li>
+            <li><a routerLink="products">Productos</a></li>
+        </ul>
+    </nav>
+</section>
+    
 <p class="grow text-center text-3xl font-bold uppercase">Tienda</p>
 <button-shoppingcart></button-shoppingcart>
