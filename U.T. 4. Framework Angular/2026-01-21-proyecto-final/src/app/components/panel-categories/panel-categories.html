@@ -1,12 +1,28 @@
-<h1 class="font-bold text-2xl uppercase text-center">Categorías</h1>
+<h1>Categorías</h1>
+
+@if (categories$ | async; as categories) {
+    <section>
+        @for (category of categories; track $index) {
+            <label>
+                <input type="radio" name="category" [value]="category.id" (change)="categoryChangedHandler(category.id, category.name)">
+                {{category.name}}
+            </label>
+        }
+    </section>
+}
+
+@if (selectedCategoryId) {
+    <button type="button" [attr.data-category-id]="selectedCategoryId">Ver productos de la categoría {{selectedCategoryName}}</button>
+}
+
+
+
+
+<!-- <h1 class="font-bold text-2xl uppercase text-center">Categorías</h1>
 
 @if (categories$ | async; as categories) {
     <section class="flex flex-col">
         @for (category of categories; track $index) {
-            <!-- <a [routerLink]="`/categories/${category.id}/products`">{{category.name}}</a> -->
-            <!-- <p [attr.data-category-id]="category.id" (click)="categoryClickHandler($event)">
-                {{category.name}}
-            </p> -->
         
             <label>
                 <input type="radio" name="category" [value]="category.id">
@@ -19,4 +35,4 @@
     </section>
 } @else {
     <div>Espere, por favor.</div>
-}
+} -->
