@@ -1,0 +1,15 @@
+<h1>Selector de marcas con un desplegable</h1>
+
+@if (brands) {
+    <select #selectBrand [size]="brands.length+1" (change)="brandChangedHandler(selectBrand.value)">
+        <option selected disabled>Seleccione una marca ...</option>
+        @for (brand of brands; track $index) {
+            <option [value]="brand.id">{{brand.name}}</option>
+        }
+    </select>
+}
+
+<br><br>
+@if (selectedId) {
+    <button type="button" [attr.data-brand-id]="selectedId">Ver los vehículos de la marca {{selectedName}}</button>
+}

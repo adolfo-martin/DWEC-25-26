@@ -1,0 +1,21 @@
+<h1>Selector de marca de vehículos</h1>
+
+@if (brands) {
+    <section>
+        @for (brand of brands; track $index) {
+            <label>
+                <input type="radio" name="brand" [value]="brand.id" 
+                    (change)="brandChangedHanler(brand.id, brand.name)"
+                >
+                {{brand.name}}
+            </label>
+        }
+    </section>
+}
+
+<br>
+<br>
+
+@if (selectedId) {
+    <button type="button" [attr.data-brand-id]="selectedId">Ver los vehículos de la marca {{selectedName}}</button>
+}
