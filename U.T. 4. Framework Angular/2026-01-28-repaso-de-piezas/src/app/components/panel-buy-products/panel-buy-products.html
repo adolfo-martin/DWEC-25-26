@@ -1,0 +1,16 @@
+<h1>Productos de la categoría ???</h1>
+
+@if (categories$ | async; as categories) {
+    @for (category of categories; track $index) {
+        <detail-product 
+            [product-id]="category.id" 
+            [name]="category.name" 
+            [description]="category.description" 
+            [image]="category.image"
+            (productselected)="productSelectedHandler($event)"
+        >
+        </detail-product>
+    }
+} @else {
+    <div>Recuperando los productos, espere ...</div>
+}
